@@ -6,7 +6,7 @@ INSERT INTO postac VALUES (NULL, "Tesciowa", 'kobieta', '1901-01-01', 121);
 
 UPDATE postac SET wiek = 88 WHERE nazwa = "Tesciowa";
 
-CREATE TABLE walizka (id_walizki INT PRIMARY KEY AUTO_INCREMENT, pojemnosc INT UNSIGNED, kolor ENUM('rozowy', 'czerwony', 'teczowy', 'zolty'), id_wlasciciela INT REFERENCES postac.id_postaci ON DELETE CASCADE);
+CREATE TABLE walizka (id_walizki INT PRIMARY KEY AUTO_INCREMENT, pojemnosc INT UNSIGNED, kolor ENUM('rozowy', 'czerwony', 'teczowy', 'zolty'), id_wlasciciela INT, FOREIGN KEY (id_wlasciciela) REFERENCES postac.id_postaci ON DELETE CASCADE);
 
 ALTER TABLE walizka ALTER kolor SET DEFAULT 'rozowy';
 
