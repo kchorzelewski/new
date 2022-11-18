@@ -62,4 +62,11 @@ c)
 
 Zadanie 4
 a) INSERT INTO postac (id_postaci, nazwa) VALUES (5, "waz loko");
-b) 
+b) CREATE TABLE marynarz AS SELECT * FROM postac;
+	DELETE FROM marynarz WHERE statek IS NULL;
+c) ALTER TABLE marynarz ADD PRIMARY KEY (id_postaci), ADD FOREIGN KEY (statek) REFERENCES statek(nazwa_statku); 
+
+Zadanie 5
+a) UPDATE marynarz SET statek = NULL;
+b) DELETE FROM marynarz WHERE id_postaci = 6;
+c) 
